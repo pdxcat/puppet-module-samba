@@ -29,6 +29,12 @@
 <% if @public != "NONE" -%>
   public                 = <%= @public %>
 <% end -%>
+<% if @posix_locking != "NONE" -%>
+  posix locking          = <%= @posix_locking %>
+<% end -%>
+<% if @dfree_command != "NONE" -%>
+  dfree command          = <%= @dfree_command %>
+<% end -%>
 <% if @create_mask != "NONE" -%>
   create mask            = <%= @create_mask %>
 <% end -%>
