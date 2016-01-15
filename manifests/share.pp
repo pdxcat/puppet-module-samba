@@ -35,6 +35,8 @@ define samba::share(
 
   realize Concat[$samba::params::smb_conf_filename]
 
+  $share_path = $path
+
   concat::fragment { $name:
     ensure  => $ensure,
     target  => $samba::params::smb_conf_filename,
