@@ -18,7 +18,7 @@ class samba(
     enable => true,
   }
 
-  @concat { $samba::params::smb_conf_filename:
+  concat { $samba::params::smb_conf_filename:
     owner  => 'root',
     group  => 'root',
     mode   => '0644',

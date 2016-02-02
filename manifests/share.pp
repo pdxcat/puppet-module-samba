@@ -29,14 +29,11 @@ define samba::share(
 ) {
   include ::samba
 
-  realize Concat[$samba::params::smb_conf_filename]
-
   concat::fragment { $name:
     ensure  => $ensure,
     target  => $samba::params::smb_conf_filename,
     content => template('samba/share.erb'),
     order   => $priority,
   }
-
 }
 

@@ -10,13 +10,10 @@ define samba::dfsroot(
 ) {
   include ::samba
 
-  realize Concat[$smb_conf_filename]
-
   concat::fragment { $name:
     ensure  => $ensure,
     target  => $smb_conf_filename,
     content => template('samba/dfsroot.erb'),
     order   => $priority,
   }
-
 }
