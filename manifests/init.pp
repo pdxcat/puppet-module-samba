@@ -6,7 +6,7 @@ class samba(
   package { $samba::params::smbpackage:
     ensure   => latest,
     name     => $samba::params::smbpackage,
-    provider => $osfamily ? {
+    provider => $::osfamily ? {
       'Solaris' => pkgutil,
       default   => undef,
     }
