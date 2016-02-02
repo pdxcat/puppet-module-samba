@@ -21,7 +21,7 @@ class samba(
   concat { $samba::params::smb_conf_filename:
     ensure => present,
     owner  => 'root',
-    group  => 'root',
+    group  => $samba::params::root_group,
     mode   => '0644',
     notify => Service[$samba::params::smbservice],
   }
