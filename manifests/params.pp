@@ -1,4 +1,5 @@
 class samba::params {
+  $root_user = 'root'
   case $::osfamily {
     'Debian': {
       $smbservice        = 'smbd'
