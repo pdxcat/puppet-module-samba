@@ -15,5 +15,8 @@ class samba::params {
       $smbpackage        = 'samba43'
       $smb_conf_filename = '/usr/local/etc/smb4.conf'
     }
+    default: {
+      fail("::samba does not support osfamily ${::osfamily}")
+    }
   }
 }
