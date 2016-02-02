@@ -10,5 +10,10 @@ class samba::params {
       $smbpackage        = 'CSWsamba'
       $smb_conf_filename = '/etc/opt/csw/samba/smb.conf'
     }
+    'FreeBSD': {
+      $smbservice        = 'samba_server'
+      $smbpackage        = 'samba43'
+      $smb_conf_filename = '/usr/local/etc/smb4.conf'
+    }
   }
 }
