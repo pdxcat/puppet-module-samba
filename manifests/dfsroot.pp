@@ -8,11 +8,7 @@ define samba::dfsroot(
   $ensure               = present,
   $priority             = '20'
 ) {
-  include samba
-
-  if ! ($::osfamily in ['Debian']) {
-    fail("samba::dfsroot does not support osfamily ${::osfamily}")
-  }
+  include ::samba
 
   realize Concat[$smb_conf_filename]
 

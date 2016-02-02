@@ -27,11 +27,7 @@ define samba::share(
   $vfs_objects            = 'NONE',
   $writeable              = 'NONE'
 ) {
-  include samba
-
-  if ! ($::osfamily in ['Debian', 'Solaris']) {
-    fail("samba::share does not support osfamily ${::osfamily}")
-  }
+  include ::samba
 
   realize Concat[$samba::params::smb_conf_filename]
 

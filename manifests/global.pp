@@ -29,11 +29,7 @@ define samba::global(
   $ensure               = present,
   $priority             = '1',
 ) {
-  include samba
-
-  if ! ($::osfamily in ['Debian', 'Solaris']) {
-    fail("samba::global does not support osfamily ${::osfamily}")
-  }
+  include ::samba
 
   realize Concat[$samba::params::smb_conf_filename]
 
