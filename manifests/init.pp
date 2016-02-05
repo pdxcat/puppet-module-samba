@@ -12,11 +12,28 @@ class samba(
     }
   }
 
+  ->
+
+  file { $::samba::params::smb_var_dir:
+    ensure => 'directory',
+    owner  => 'root',
+    mode   => '0755',
+  }
+
+  ->
+
+  file { $::samba::params::smb_dfs_dir:
+    ensure => 'directory',
+    owner  => 'root',
+    mode   => '0755',
+  }
+
   service {$samba::params::smbservice:
     ensure => running,
     name   => $samba::params::smbservice,
     enable => true,
   }
+
 
   concat { $samba::params::smb_conf_filename:
     ensure => present,

@@ -1,74 +1,74 @@
 [<%= @name %>]
-<% if @browseable != "NONE" -%>
+<% if !@browseable.nil? -%>
   browseable             = <%= @browseable %>
 <% end -%>
-<% if @msdfs_root != "NONE" %>
+<% if !@msdfs_root.nil? %>
   msdfs root             = <%= @msdfs_root %>
 <% end -%>
-<% if @msdfs_proxy != "NONE" -%>
+<% if !@msdfs_proxy.nil? -%>
   msdfs proxy            = <%= @msdfs_proxy %>
 <% end -%>
-<% if @comment != "NONE" -%>
+<% if !@comment.nil? -%>
   comment                = <%= @comment %>
 <% end -%>
-<% if @path != "NONE" -%>
+<% if !@samba_path.nil? -%>
   path                   = <%= @path %>
 <% end -%>
-<% if @writeable != "NONE" -%>
+<% if !@writeable.nil? -%>
   writeable              = <%= @writeable %>
 <% end -%>
-<% if @force_create_mode != "NONE" -%>
+<% if !@force_create_mode.nil? -%>
   force create mode      = <%= @force_create_mode %>
 <% end -%>
-<% if @force_directory_mode != "NONE" -%>
+<% if !@force_directory_mode.nil? -%>
   force directory mode   = <%= @force_directory_mode %>
 <% end -%>
-<% if @force_group != "NONE" -%>
+<% if !@force_group.nil? -%>
   force group            = <%= @force_group %>
 <% end -%>
-<% if @public != "NONE" -%>
+<% if !@public.nil? -%>
   public                 = <%= @public %>
 <% end -%>
-<% if @posix_locking != "NONE" -%>
+<% if !@posix_locking.nil? -%>
   posix locking          = <%= @posix_locking %>
 <% end -%>
-<% if @dfree_command != "NONE" -%>
+<% if !@dfree_command.nil? -%>
   dfree command          = <%= @dfree_command %>
 <% end -%>
-<% if @create_mask != "NONE" -%>
+<% if !@create_mask.nil? -%>
   create mask            = <%= @create_mask %>
 <% end -%>
-<% if @directory_mask != "NONE" -%>
+<% if !@directory_mask.nil? -%>
   directory mask         = <%= @directory_mask %>
 <% end -%>
-<% if @inherit_acls != "NONE" -%>
+<% if !@inherit_acls.nil? -%>
   inherit acls           = <%= @inherit_permissions %>
 <% end -%>
-<% if @inherit_permissions != "NONE" -%>
+<% if !@inherit_permissions.nil? -%>
   inherit permissions    = <%= @directory_mask %>
 <% end -%>
-<% if @acl_check_permissions != "NONE" -%>
+<% if !@acl_check_permissions.nil? -%>
   acl check permissions  = <%= @acl_check_permissions %>
 <% end -%>
-<% if @vfs_objects != "NONE" -%>
+<% if !@vfs_objects.nil? -%>
   vfs objects            = <%= @vfs_objects %>
 <% end -%>
-<% if @nfs4_mode != "NONE" -%>
+<% if !@nfs4_mode.nil? -%>
   nfs4:mode              = <%= @nfs4_mode  %>
 <% end -%>
-<% if @nfs4_acedup != "NONE" -%>
+<% if !@nfs4_acedup.nil? -%>
   nfs4:acedup            = <%= @nfs4_acedup %>
 <% end -%>
-<% if @nfs4_chown != "NONE" -%>
+<% if !@nfs4_chown.nil? -%>
   nfs4:chown             = <%= @nfs4_chown %>
 <% end -%>
-<% if @guest_ok != "NONE" -%>
+<% if !@guest_ok.nil? -%>
   guest ok               = <%= @guest_ok %>
 <% end -%>
-<% if @guest_only != "NONE" -%>
+<% if !@guest_only.nil? -%>
   guest only             = <%= @guest_only %>
 <% end -%>
-<% if @force_user != "NONE" -%>
+<% if !@force_user.nil? -%>
   force user             = <%= @force_user %>
 <% end -%>
 
