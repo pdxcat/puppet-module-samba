@@ -2,14 +2,15 @@ define samba::dfs::root(
   $comment              = undef,
   $public               = undef,
   $ensure               = present,
+  $msdfs_root           = 'yes',
   $priority             = '20',
   $links                = [],
 ) {
   include ::samba
 
-  $msdfs_root = 'yes'
-
   $dfs_root_path = "${::samba::params::smb_dfs_dir}/${name}"
+
+  $samba_path = $dfs_root_path
 
   concat::fragment { $name:
     ensure  => $ensure,

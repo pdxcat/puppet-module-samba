@@ -5,7 +5,7 @@ class samba::params {
       $smbservice        = 'smbd'
       $smbpackage        = 'samba'
       $smb_conf_filename = '/etc/samba/smb.conf'
-      $smb_var_dir       = '/var/lib/samba/'
+      $smb_var_dir       = '/var/lib/samba'
       $root_group        = 'root'
     }
     'Solaris': {
