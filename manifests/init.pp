@@ -16,7 +16,8 @@ class samba(
 
   file { $::samba::params::smb_var_dir:
     ensure => 'directory',
-    owner  => 'root',
+    owner  => $::samba::params::root_user,
+    group  => $::samba::params::var_group,
     mode   => '0755',
   }
 
@@ -24,7 +25,8 @@ class samba(
 
   file { $::samba::params::smb_dfs_dir:
     ensure => 'directory',
-    owner  => 'root',
+    owner  => $::samba::params::root_user,
+    group  => $::samba::params::root_group,
     mode   => '0755',
   }
 

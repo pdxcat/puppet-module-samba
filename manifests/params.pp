@@ -6,6 +6,7 @@ class samba::params {
       $smbpackage        = 'samba'
       $smb_conf_filename = '/etc/samba/smb.conf'
       $smb_var_dir       = '/var/lib/samba'
+      $var_group         = 'root'
       $root_group        = 'root'
     }
     'Solaris': {
@@ -13,6 +14,7 @@ class samba::params {
       $smbpackage        = 'CSWsamba'
       $smb_conf_filename = '/etc/opt/csw/samba/smb.conf'
       $smb_var_dir       = '/var/opt/csw/samba'
+      $var_group         = 'bin'
       $root_group        = 'root'
     }
     'FreeBSD': {
@@ -20,6 +22,7 @@ class samba::params {
       $smbpackage        = 'samba43'
       $smb_conf_filename = '/usr/local/etc/smb4.conf'
       $smb_var_dir       = '/var/samba'
+      $var_group         = 'root'
       $root_group        = 'wheel'
     }
     default: {
