@@ -22,7 +22,7 @@ class samba::params {
       $smbpackage        = 'samba43'
       $smb_conf_filename = '/usr/local/etc/smb4.conf'
       $smb_var_dir       = '/var/samba'
-      $var_group         = 'root'
+      $var_group         = 'wheel'
       $root_group        = 'wheel'
     }
     default: {
