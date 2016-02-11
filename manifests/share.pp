@@ -4,7 +4,6 @@ define samba::share(
   $browseable             = undef,
   $comment                = undef,
   $create_mask            = undef,
-  $create_mask            = undef,
   $dfree_command          = undef,
   $directory_mask         = undef,
   $force_create_mode      = undef,
