@@ -2,7 +2,7 @@
 #======================= Global Settings =====================================
 
 [global]
-<% if !@bind_interfaces_only.nil? %>
+<% if !@bind_interfaces_only.nil? -%>
   bind interfaces only = <%= @bind_interfaces_only %>
 <% end -%>
 <% if !@dns_proxy.nil? -%>
