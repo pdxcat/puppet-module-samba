@@ -3,14 +3,16 @@ class samba(
 ) {
   include ::samba::params
 
+  # lint:ignore:selector_inside_resource
+
   package { $samba::params::smbpackage:
-    ensure   => latest,
     name     => $samba::params::smbpackage,
     provider => $::osfamily ? {
       'Solaris' => pkgutil,
       default   => undef,
     }
   }
+  # lint:endignore
 
   ->
 
