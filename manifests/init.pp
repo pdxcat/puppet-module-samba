@@ -1,5 +1,6 @@
 class samba(
-  $smb_conf_filename    = $samba::params::smb_conf_filename,
+  $smb_conf_filename = $samba::params::smb_conf_filename,
+  $disable_winbindd  = true,
 ) {
   include ::samba::params
 
@@ -38,6 +39,13 @@ class samba(
     enable => true,
   }
 
+  if ($disable_winbindd and $::osfamily == 'FreeBSD') {
+    file_line { 'disable winbindd':
+      path  => '/usr/local/etc/rc.d/samba_server',
+      line  => '            samba_daemons="nmbd smbd" # winbindd"',
+      match => '^\s+samba_daemons="nmbd smbd winbindd"',
+    }
+  }
 
   concat { $samba::params::smb_conf_filename:
     ensure => present,
