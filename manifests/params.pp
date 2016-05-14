@@ -8,6 +8,12 @@ class samba::params {
       $smb_var_dir       = '/var/lib/samba'
       $var_group         = 'root'
       $root_group        = 'root'
+      if (versioncmp($::operatingsystemrelease, '16.04') >= 0) {
+        $samba_service_provider = 'debian'
+      }
+      else {
+        $samba_service_provider = undef
+      }
     }
     'Solaris': {
       $smbservice        = 'cswsamba'
@@ -16,6 +22,7 @@ class samba::params {
       $smb_var_dir       = '/var/opt/csw/samba'
       $var_group         = 'bin'
       $root_group        = 'root'
+      $samba_service_provider = undef
     }
     'FreeBSD': {
       $smbservice        = 'samba_server'
@@ -24,6 +31,7 @@ class samba::params {
       $smb_var_dir       = '/var/samba'
       $var_group         = 'wheel'
       $root_group        = 'wheel'
+      $samba_service_provider = undef
     }
     default: {
       fail("::samba does not support osfamily ${::osfamily}")

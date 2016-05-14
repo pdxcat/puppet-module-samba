@@ -34,9 +34,10 @@ class samba(
   }
 
   service {$samba::params::smbservice:
-    ensure => running,
-    name   => $samba::params::smbservice,
-    enable => true,
+    ensure   => running,
+    name     => $samba::params::smbservice,
+    provider => $::samba::params::samba_service_provider,
+    enable   => true,
   }
 
   if ($disable_winbindd and $::osfamily == 'FreeBSD') {
