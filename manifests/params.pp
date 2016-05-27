@@ -26,7 +26,7 @@ class samba::params {
     }
     'FreeBSD': {
       $smbservice        = 'samba_server'
-      $smbpackage        = 'samba43'
+      $smbpackage        = 'samba44'
       $smb_conf_filename = '/usr/local/etc/smb4.conf'
       $smb_var_dir       = '/var/samba'
       $var_group         = 'wheel'
