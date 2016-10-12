@@ -33,6 +33,17 @@ class samba(
     mode   => '0755',
   }
 
+  if ($::samba::params::manage_unit_files) {
+    ::systemd::unit_file {
+      'smbd.service':
+        source => 'puppet:///modules/samba/units/smbd.service',
+        before => Service[$samba::params::smbservice];
+      'nmbd.service':
+        source => 'puppet:///modules/samba/units/nmbd.service',
+        before => Service[$samba::params::smbservice];
+    }
+  }
+
   service {$samba::params::smbservice:
     ensure   => running,
     name     => $samba::params::smbservice,

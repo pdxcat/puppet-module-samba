@@ -9,7 +9,10 @@ class samba::params {
       $var_group         = 'root'
       $root_group        = 'root'
       if (versioncmp($::operatingsystemrelease, '16.04') >= 0) {
-        $samba_service_provider = 'debian'
+        $manage_unit_files = true
+        $smbd_unit_file = '/lib/systemd/system/smbd.service'
+        $nmbd_unit_file = '/lib/systemd/system/nmbd.service'
+        $samba_service_provider = 'systemd'
       }
       else {
         $samba_service_provider = undef
