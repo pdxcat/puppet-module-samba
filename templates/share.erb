@@ -42,10 +42,10 @@
   directory mask         = <%= @directory_mask %>
 <% end -%>
 <% if !@inherit_acls.nil? -%>
-  inherit acls           = <%= @inherit_permissions %>
+  inherit acls           = <%= @inherit_acls %>
 <% end -%>
 <% if !@inherit_permissions.nil? -%>
-  inherit permissions    = <%= @directory_mask %>
+  inherit permissions    = <%= @inherit_permissions %>
 <% end -%>
 <% if !@acl_check_permissions.nil? -%>
   acl check permissions  = <%= @acl_check_permissions %>
