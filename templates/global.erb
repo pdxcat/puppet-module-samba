@@ -5,6 +5,9 @@
 <% if !@bind_interfaces_only.nil? -%>
   bind interfaces only = <%= @bind_interfaces_only %>
 <% end -%>
+<% if !@client_ldap_sasl_wrapping.nil? -%>
+  client ldap_sasl wrapping = <%= @client_ldap_sasl_wrapping %>
+<% end -%>
 <% if !@dns_proxy.nil? -%>
   dns proxy            = <%= @dns_proxy %>
 <% end -%>
@@ -40,6 +43,12 @@
 <% end -%>
 <% if !@max_log_size.nil? -%>
   max log size         = <%= @max_log_size %>
+<% end -%>
+<% if !@max_protocol.nil? -%>
+  max protocol         = <%= @max_protocol %>
+<% end -%>
+<% if !@min_protocol.nil? -%>
+  min protocol         = <%= @min_protocol %>
 <% end -%>
 <% if !@netbios_name.nil? -%>
   netbios name         = <%= @netbios_name %>
