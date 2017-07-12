@@ -1,5 +1,6 @@
 class samba(
   $smb_conf_filename = $samba::params::smb_conf_filename,
+  $samba_service      = $samba::params::smbservice,
   $disable_winbindd  = true,
 ) {
   include ::samba::params
@@ -37,16 +38,16 @@ class samba(
     ::systemd::unit_file {
       'smbd.service':
         source => 'puppet:///modules/samba/units/smbd.service',
-        before => Service[$samba::params::smbservice];
+        before => Service[$samba_service];
       'nmbd.service':
         source => 'puppet:///modules/samba/units/nmbd.service',
-        before => Service[$samba::params::smbservice];
+        before => Service[$samba_service];
     }
   }
 
-  service {$samba::params::smbservice:
+  service {$samba_service:
     ensure   => running,
-    name     => $samba::params::smbservice,
+    name     => $samba_service,
     provider => $::samba::params::samba_service_provider,
     enable   => true,
   }
