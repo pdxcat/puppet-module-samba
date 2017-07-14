@@ -60,12 +60,12 @@ class samba(
     }
   }
 
-  concat { $samba::params::smb_conf_filename:
+  concat { $smb_conf_filename:
     ensure => present,
     owner  => $samba::params::root_user,
     group  => $samba::params::root_group,
     mode   => '0644',
-    notify => Service[$samba::params::smbservice],
+    notify => Service[$samba_service],
   }
 
 }

@@ -14,7 +14,7 @@ define samba::dfs::root(
 
   concat::fragment { $name:
     ensure  => $ensure,
-    target  => $::samba::params::smb_conf_filename,
+    target  => $::samba::smb_conf_filename,
     content => template('samba/share.erb'),
     order   => $priority,
   }
